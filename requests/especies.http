@@ -1,0 +1,56 @@
+@api = http://localhost:3100/api/especies
+
+
+###--------------------------------------------------------
+### C
+### Crear el nuevo registro de una especie
+POST {{api}}/createEspecie
+Content-Type: application/json
+
+{
+    "familia": "Pot",
+    "nombre": "Taeniurops meyeni",
+    "cantidad":"diez"
+  
+}
+
+###-----------------------------------------------------------
+### R - ejemplo simple
+### Retorna Todas las especies en la lista
+{{api}}/getEspecies
+
+###------------------------------------------------------------
+### R - 
+### Retorna especie con id especificado
+{{api}}/getEspecieById/2
+
+
+###------------------------------------------------------------
+### R - 
+### Retorna conteo total de especies
+{{api}}/countEspecies
+
+###------------------------------------------------------------
+### R - 
+### Retorna lista ordenada por especie
+{{api}}/getEspeciesByName
+
+###-------------------------------------------------------------
+### U
+### update especie por Id
+PUT {{api}}/updateEspecie/2
+Content-Type: application/json
+
+{
+    "familia": "Lutjanidae",
+    "nombre": "Lutjanus argentiventris",
+    "cantidad": 20
+    
+}
+
+###--------------------------------------------------------------
+### D
+### Borrar una especie por Id 
+DELETE {{api}}/deleteEspecieById/11
+
+### 
