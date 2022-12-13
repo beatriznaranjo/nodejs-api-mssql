@@ -13,6 +13,9 @@ getEspecieById: "SELECT * FROM lista_especies WHERE id = @id",
 //R
 getEspeciesByName: "SELECT L.* FROM lista_especies L ORDER BY L.nombre ASC",
 
+//R
+getEspeciesByFamily: "SELECT L.* FROM lista_especies L WHERE familia = @familia",
+
 //
 countEspecies: "SELECT COUNT(*) FROM lista_especies",
 

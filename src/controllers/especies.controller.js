@@ -85,6 +85,20 @@ export const getEspeciesByName = async (req, res) => {
   }
 };
 
+export const getEspeciesByFamily = async (req, res) => {
+  try {
+    const pool = await getConnection();
+    const result = await pool
+    .request()
+    .input("familia", req.params.familia)
+    .query(queries.getEspeciesByFamily);
+    res.json(result.recordset);
+  } catch (error) {
+    res.status(500); 
+    res.send(error.message);
+  }
+}
+
 //Actualizar info de una especie, obteniendola por ID
 export const updateEspecie = async (req, res) => {
   const { familia, nombre, cantidad } = req.body;

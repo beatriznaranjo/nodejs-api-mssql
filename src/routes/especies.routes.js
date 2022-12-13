@@ -4,6 +4,7 @@ import {
     getEspecies,
     getEspecieById,
     getEspeciesByName,
+    getEspeciesByFamily,
     updateEspecie,
     deleteEspecieById,
     defaultEspecies,
@@ -29,6 +30,9 @@ router.get("/especies/countEspecies", countEspecies);
 
 //R - lista por nombre ascendente
 router.get("/especies/getEspeciesByName", getEspeciesByName);
+
+//R - obtener especies por familia
+router.get("/especies/getEspeciesByFamily/:familia", getEspeciesByFamily);
 
 //U
 router.put("/especies/updateEspecie/:id", updateEspecie);

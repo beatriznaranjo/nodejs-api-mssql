@@ -8,33 +8,55 @@ GO
 
 USE Especies;
 
---Crear tabla Listado
+--Crear tabla Listado de especies
 GO
-CREATE TABLE lista
+CREATE TABLE lista_especies
 (
-    id_especie int IDENTITY(1,1) NOT NULL,
-    nombre_especie nvarchar(100) NOT NULL,
-    PRIMARY KEY (id_especie)
+    id int IDENTITY(1,1) NOT NULL,
+    familia nvarchar(50) NOT NULL,
+    nombre nvarchar(100) NOT NULL,
+    cantidad int,
+    PRIMARY KEY (id)
 )
 GO
 
---Read species 
 
-SELECT *
-FROM lista_especies
-SELECT *
-FROM lista_especies
-WHERE id_especie = 1
-
---Insertar datos de especies
-INSERT INTO lista
+--CREATE > Insertar datos de especies
+INSERT INTO lista_especies
 VALUES
-    ('Scorpaena afuerae')
+    ('Scorpaenidae', 'Scorpaena afuerae', 3),
+    ('Pomacanthidae', 'Holacanthus passer', 5),
+    ('Carcharhinidae', 'Carcharhinus galapagensis', 1),
+    ('Carcharhinidae', 'Triaenodon obesus', 1)
+GO
 
---Update  lista de especies
-UPDATE lista_especies SET nombre_especie = 'Bodianus diplotaenia' WHERE id_especie = 1
+--READ 
 
---Delete especie
-DELETE lista_especies WHERE id_especie = 1
+SELECT *
+FROM lista_especies
 
- 
+--Obtener datos de una especie por id
+SELECT *
+FROM lista_especies
+WHERE id = 1
+
+--Obtener conteo de especies
+SELECT COUNT(*)
+FROM lista_especies
+
+--Ordenar especies por nombre
+SELECT L.*
+FROM lista_especies L
+ORDER BY L.nombre ASC
+
+--Seleccionar especies de una familia
+SELECT L.*
+FROM lista_especies L
+WHERE familia = 'Carcharhinidae'
+
+
+--UPDATE  
+UPDATE lista_especies SET familia = 'Labridae', nombre = 'Bodianus diplotaenia', cantidad = 5 WHERE id = 1
+
+--DELETE 
+DELETE lista_especies WHERE id = 1

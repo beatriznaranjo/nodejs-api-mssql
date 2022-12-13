@@ -18,7 +18,8 @@ router.get("/especies/getEspecies", _especiesController.getEspecies); //R - ejem
 
 router.get("/especies/getEspecieById/:id_especie", _especiesController.getEspecieById); //R - contar especies
 
-router.get("/especies/countEspecies", _especiesController.countEspecies); //U
+router.get("/especies/countEspecies", _especiesController.countEspecies); //R
+
 
 router.put("/especies/updateEspecie/:id_especie", _especiesController.updateEspecie); //D
 
