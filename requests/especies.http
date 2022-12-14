@@ -60,6 +60,13 @@ Content-Type: application/json
 {{api}}/getEspeciesByFamily/Carcharhinidae
 
 
+###------------------------------------------------------------
+### R - 
+### Retorna lista de observaciones de un sitio especifico
+{{api}}/getEspeciesPorSitio/1
+
+
+
 ###-------------------------------------------------------------
 ### U
 ### update especie por Id

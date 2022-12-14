@@ -43,7 +43,7 @@ router.get("/especies/getEspeciesSortByName", getEspeciesSortByName);
 router.get("/especies/getEspeciesByFamily/:familia", getEspeciesByFamily);
 
 //R - obtener observaciones registradas ordenadas por region-sitio
-router.get("/especies/getEspeciesPorSitio/", getEspeciesPorSitio);
+router.get("/especies/getEspeciesPorSitio/:id", getEspeciesPorSitio);
 
 //U
 router.put("/especies/updateEspecie/:id", updateEspecie);

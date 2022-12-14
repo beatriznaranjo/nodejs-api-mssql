@@ -153,6 +153,7 @@ export const getEspeciesPorSitio = async (req, res) => {
     const pool = await getConnection();
     const result = await pool
     .request()
+    .input("id", req.params.id)
     .query(queries.getEspeciesPorSitio);
     res.json(result.recordset);
   } catch (error) {

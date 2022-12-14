@@ -26,7 +26,7 @@ getEspeciesByFamily: "SELECT L.* FROM lista_especies L WHERE familia = @familia"
 countObservaciones: "SELECT COUNT(*) FROM lista_especies",
 
 //R Ver observaciones por sitio, ordenadas por region
-getEspeciesPorSitio: "SELECT S.region, S.nombre, L.nombre FROM lista_especies L INNER JOIN sitios S ON L.sitio = S.id ORDER BY S.region ASC",
+getEspeciesPorSitio: "SELECT S.region, S.nombre AS sitio, L.nombre AS especie FROM lista_especies L INNER JOIN sitios S ON L.sitio = S.id WHERE L.sitio = @id ORDER BY S.region ASC",
 
 //U
 updateEspecie: "UPDATE lista_especies SET familia = @familia, nombre = @nombre, cantidad = @cantidad WHERE id = @id",
