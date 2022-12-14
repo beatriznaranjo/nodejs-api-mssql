@@ -198,6 +198,7 @@ export const deleteEspecieById = async (req, res) => {
         .input("id", req.params.id)
         .query(queries.deleteEspecieById);
       if (result.rowsAffected[0] === 0) return res.status(404).json({"Error 404": `No se encontró especie con ID = ${req.params.id}`});
+      console.log("Se eliminó correctamente");
       return res.sendStatus(204);
     } catch (error) {
       res.status(500);

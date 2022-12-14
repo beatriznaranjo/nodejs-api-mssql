@@ -88,10 +88,11 @@ FROM lista_especies L
 WHERE familia = 'Carcharhinidae'
 
 --Ver especies por sitio
-SELECT S.region, S.nombre AS sitio, L.nombre
+SELECT S.region, S.nombre AS sitio, L.nombre AS especie
 FROM lista_especies L
     INNER JOIN sitios S
     ON L.sitio = S.id
+WHERE L.sitio = 1
 ORDER BY S.region ASC
 
 

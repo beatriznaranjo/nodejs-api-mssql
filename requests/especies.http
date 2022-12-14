@@ -26,9 +26,9 @@ POST {{api}}/createEspecie
 Content-Type: application/json
 
 {
-    "familia": "Gobiidae",
-    "nombre": "Lythrypnus cobalus",
-    "cantidad":"20",
+    "familia": "Gob",
+    "especie":"Lythrypnus cobalus",
+    "cantidad":20,
     "sitio": 4
 }
 
@@ -83,6 +83,6 @@ Content-Type: application/json
 ###--------------------------------------------------------------
 ### D
 ### Borrar una especie por Id 
-DELETE {{api}}/deleteEspecieById/11
+DELETE {{api}}/deleteEspecieById/100
 
 ### 
