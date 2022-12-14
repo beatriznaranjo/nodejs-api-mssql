@@ -1,38 +1,49 @@
 import { Router } from "express";
 import { 
     createEspecie,
+    createSitio,
     getEspecies,
+    getSitios,
     getEspecieById,
-    getEspeciesByName,
+    getEspeciesSortByName,
     getEspeciesByFamily,
+    getEspeciesPorSitio,
     updateEspecie,
     deleteEspecieById,
     defaultEspecies,
-    countEspecies
+    countObservaciones
  } from "../controllers/especies.controller.js";
 
 const router = Router();
 
 //CRUD para tala de lista de especies
 
-//C
+//C 
 router.post("/especies/createEspecie", createEspecie);
 
+//
+router.post("/especies/createSitio", createSitio);
 
-//R - ejemplo simple
+//R - Obtener todas las observaciones de especies
 router.get("/especies/getEspecies", getEspecies);
+
+//R - Obtener todos los sitios registrados
+router.get("/especies/getSitios", getSitios);
 
 //R - ejemplo con parametro
 router.get("/especies/getEspecieById/:id", getEspecieById);
 
 //R - contar especies
-router.get("/especies/countEspecies", countEspecies);
+router.get("/especies/countObservaciones", countObservaciones);
 
 //R - lista por nombre ascendente
-router.get("/especies/getEspeciesByName", getEspeciesByName);
+router.get("/especies/getEspeciesSortByName", getEspeciesSortByName);
 
 //R - obtener especies por familia
 router.get("/especies/getEspeciesByFamily/:familia", getEspeciesByFamily);
+
+//R - obtener observaciones registradas ordenadas por region-sitio
+router.get("/especies/getEspeciesPorSitio/", getEspeciesPorSitio);
 
 //U
 router.put("/especies/updateEspecie/:id", updateEspecie);

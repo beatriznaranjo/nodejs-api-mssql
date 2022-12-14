@@ -1,6 +1,24 @@
 @api = http://localhost:3100/api/especies
 
 
+
+###--------------------------------------------------------
+### C
+### Crear el nuevo registro de un sitio
+POST {{api}}/createSitio
+Content-Type: application/json
+
+{
+    "nombre": "Bajo Matador",
+    "region": "Isla del Caño"
+}
+
+###-----------------------------------------------------------
+### R 
+### Retorna Todas las sitios registrados
+{{api}}/getSitios
+
+
 ###--------------------------------------------------------
 ### C
 ### Crear el nuevo registro de una especie
@@ -8,11 +26,12 @@ POST {{api}}/createEspecie
 Content-Type: application/json
 
 {
-    "familia": "Pot",
-    "nombre": "Taeniurops meyeni",
-    "cantidad":"diez"
-  
+    "familia": "Gobiidae",
+    "nombre": "Lythrypnus cobalus",
+    "cantidad":"20",
+    "sitio": 4
 }
+
 
 ###-----------------------------------------------------------
 ### R - ejemplo simple
@@ -27,13 +46,19 @@ Content-Type: application/json
 
 ###------------------------------------------------------------
 ### R - 
-### Retorna conteo total de especies
-{{api}}/countEspecies
+### Retorna conteo total de observaciones
+{{api}}/countObservaciones
 
 ###------------------------------------------------------------
 ### R - 
 ### Retorna lista ordenada por especie
-{{api}}/getEspeciesByName
+{{api}}/getEspeciesSortByName
+
+###------------------------------------------------------------
+### R - 
+### Retorna lista por familia
+{{api}}/getEspeciesByFamily/Carcharhinidae
+
 
 ###-------------------------------------------------------------
 ### U
@@ -42,10 +67,10 @@ PUT {{api}}/updateEspecie/2
 Content-Type: application/json
 
 {
-    "familia": "Lutjanidae",
-    "nombre": "Lutjanus argentiventris",
-    "cantidad": 20
-    
+    "familia": "Haemulidae",
+    "nombre": "Anisotremus interruptus",
+    "cantidad": 10,
+    "sitio": 2
 }
 
 ###--------------------------------------------------------------
